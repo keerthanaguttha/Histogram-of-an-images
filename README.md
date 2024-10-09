@@ -12,8 +12,6 @@ Read the gray and color image using imread()
 ### Step2:
 Print the image using imshow().
 
-
-
 ### Step3:
 Use calcHist() function to mark the image in graph frequency for gray and color image.
 
@@ -25,59 +23,56 @@ The Histogram of gray scale image and color image is shown.
 
 
 ## Program:
-```python
-# Developed By: Keerthana G
-# Register Number: 212223240045
-
+### Developed By: KEERTHANA G
+### Register Number: 212223240045
+### Input Grayscale Image and Color Image
+## Gray Image:
+```
 import cv2
-from matplotlib import pyplot as plt
-
-# Load the color image
-image = cv2.imread('Bright.jpg')
-
-# Convert the image to grayscale
+import matplotlib.pyplot as plt
+image = cv2.imread('nebula.jpg')
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
-plt.axis('off')
+plt.axis('on')
+```
+![image](https://github.com/user-attachments/assets/6a051d09-ff63-4e76-bdfc-0785f662c70f)
 
-hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
+### Histogram of Grayscale Image and any channel of Color Image
+## Histrogram:
+```p
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
-plt.xlim([0, 256])
+plt.xlim([0,256])
+```
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/3a616cdd-3683-4afb-828b-f639e4cc9aa5)
 
-# Apply histogram equalization
+
+
+### Histogram Equalization of Grayscale Image.
+
+## Equalized Image:
+```
 equalized_image = cv2.equalizeHist(gray_image)
-
 plt.imshow(equalized_image, cmap='gray')
 plt.title('Equalized Image')
-plt.axis('off')
+plt.axis('on')
+```
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/2d0c2c37-25f1-4b10-8cbd-fd70ff6fc8e5)
 
-hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
 
+
+## Histrogram:
+```
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
 plt.xlim([0, 256])
-
-
-
-
-
-
 ```
-## Output:
-### Input Grayscale Image and Color Image
-![image](https://github.com/user-attachments/assets/e23c0218-559b-4882-b1db-17fc71012cb0)
-
-### Histogram of Grayscale Image and any channel of Color Image
-![image](https://github.com/user-attachments/assets/55e3c3e3-694f-4f56-96cb-6138cadb4433)
-
-### Histogram Equalization of Grayscale Image.
-![image](https://github.com/user-attachments/assets/9f09a481-971b-4579-96f7-04c5b2c6f7fe)
-
-
-
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/07771e29-8cd4-42b4-bd5f-8acfca5cd4e6)
 
 
 ## Result: 
